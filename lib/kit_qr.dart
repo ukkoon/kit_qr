@@ -10,6 +10,7 @@ class KitQr extends StatefulWidget {
       {required this.data,
       this.size = 200,
       this.image,
+      this.imageSize= 50,
       this.noiseColors,
       this.noiseRate = 0,
       Key? key})
@@ -17,6 +18,7 @@ class KitQr extends StatefulWidget {
 
   final String data;
   final double size;
+  final double imageSize;
   final ImageProvider? image;
   final List<Color>? noiseColors;
   final double noiseRate;
@@ -26,6 +28,7 @@ class KitQr extends StatefulWidget {
         this.data,
         this.size,
         this.image,
+        this.imageSize,
         this.noiseColors,
         this.noiseRate,
       );
@@ -33,11 +36,11 @@ class KitQr extends StatefulWidget {
 
 class _KitQrState extends State<KitQr> {
   _KitQrState(
-      this.data, this.size, this.image, this.noiseColors, this.noiseRate)
+      this.data, this.size, this.image, this.imageSize, this.noiseColors, this.noiseRate)
       : assert((noiseColors == null || noiseColors.isEmpty) || (noiseRate > 0));
 
   final String data;
-  final double size;
+  final double size, imageSize;
   final ImageProvider? image;
   final List<Color>? noiseColors;
   final double noiseRate;
@@ -60,7 +63,7 @@ class _KitQrState extends State<KitQr> {
           const QrEyeStyle(eyeShape: QrEyeShape.dotted, color: Colors.black),
       embeddedImage: image,
       embeddedImageStyle: QrEmbeddedImageStyle(
-        size: Size(size / 4, size / 4),
+        size: Size(imageSize,imageSize),
       ),
     );
   }
