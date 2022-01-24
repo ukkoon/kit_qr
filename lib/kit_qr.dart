@@ -55,12 +55,12 @@ class _KitQrState extends State<KitQr> {
       errorCorrectionLevel: QrErrorCorrectLevel.H,
       padding: const EdgeInsets.all(0),
       dataModuleStyle: QrDataModuleStyle(
-          dataModuleShape: QrDataModuleShape.circle,
+          dataModuleShape: QrDataModuleShape.square,
           color: Colors.black,
           noiseColors: noiseColors,
           noiseRate: noiseRate),
       eyeStyle:
-          const QrEyeStyle(eyeShape: QrEyeShape.dotted, color: Colors.black),
+          const QrEyeStyle(eyeShape: QrEyeShape.square, color: Colors.black),
       embeddedImage: image,
       embeddedImageStyle: QrEmbeddedImageStyle(
         size: Size(imageSize,imageSize),
